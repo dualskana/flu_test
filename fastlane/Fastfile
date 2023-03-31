@@ -1,0 +1,13 @@
+desc "build runner"
+lane :build do |options|
+  Dir.chdir "../" do
+    sh "fvm flutter packages pub run build_runner build --delete-conflicting-outputs"
+  end
+end
+
+desc "pub get"
+lane :get do |options|
+  Dir.chdir "../" do
+    sh "fvm flutter pub get"
+  end
+end
